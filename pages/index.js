@@ -34,52 +34,6 @@ export const getServerSideProps = async () => {
 
 
 
-export const HomePage = () => {
-  const router = useRouter();
-  const [loggedIn, setLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    // Implement your login logic here using email and password
-    // For example, upon successful login:
-    // Assuming successful login for demonstration purposes
-    // You should replace this with your actual login logic
-    setLoggedIn(true);
-  };
-
-  if (!loggedIn) {
-    return (
-      <div>
-        <h1>Welcome to My Electronics Store</h1>
-        {/* Render the LoginPage component for login */}
-        <div>
-          <h2>Login</h2>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleLogin();
-            }}
-          >
-            {/* Your login form fields */}
-            {/* For simplicity, assuming a basic login with email and password */}
-            <input type="email" placeholder="Enter your email" />
-            <input type="password" placeholder="Enter your password" />
-            <button type="submit">Login</button>
-          </form>
-        </div>
-      </div>
-    );
-  }
-
-  // If user is logged in, redirect to the main homepage
-  router.push('/main-homepage'); // Replace '/main-homepage' with your actual homepage route
-
-  // Placeholder content, this part will not be reached if redirection occurs
-  return (
-    <div>
-      <h1>Main Homepage</h1>
-      {/* Your main homepage content */}
-    </div>
-  );
-};
 
 export default Home ;
