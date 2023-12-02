@@ -761,3 +761,26 @@ margin-top: 160px;
   margin: auto;
 }
 }
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set full viewport height */
+}
+
+.login-container {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+  .login-container {
+    width: 80%;
+  }
+}
+

@@ -13,7 +13,12 @@ export default async function handler(req, res) {
         billing_address_collection: 'auto',
         shipping_options: [
             { shipping_rate: "shr_1OIqHKSDX6n6fChv9FNSmFWW" },
+            {shipping_rate:"shr_1OIqDjSDX6n6fChvbM8Y8WJA"},
         ],
+        billing_address_collection: 'auto',
+        shipping_address_collection: {
+          allowed_countries: ['US', 'CA','IN'],
+        },
         line_items: req.body.map((item) => {
           const img = item.image[0].asset._ref;
           const newImage = img.replace('image-', 'https://cdn.sanity.io/images/1afs9f8p/production/').replace('-webp', '.webp');

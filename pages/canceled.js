@@ -1,43 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
-import { BsBagCheckFill } from 'react-icons/bs';
+import { BsXCircleFill } from 'react-icons/bs';
 
 import { useStateContext } from '../context/StateContext';
-import { runFireworks } from '../lib/utils';
 
-const Success = () => {
+const Cancel = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
-  
+
   useEffect(() => {
     localStorage.clear();
     setCartItems([]);
     setTotalPrice(0);
     setTotalQuantities(0);
-    runFireworks();
+    // Additional actions related to canceling the transaction can be added here
   }, []);
 
   return (
-    <div className="success-wrapper">
-      <div className="success">
+    <div className="cancel-wrapper">
+      <div className="cancel">
         <p className="icon">
-          <BsBagCheckFill />
+          <BsXCircleFill />
         </p>
-        <h2>Thank you for your order!</h2>
-        <p className="email-msg">Check your email inbox for the receipt.</p>
+        <h2>Transaction Canceled</h2>
+        <p className="message">Your transaction has been canceled.</p>
         <p className="description">
-          If you have any questions, please email
+          If you have any questions, please email at : 
           <a className="email" href="mailto:gadgetgalaxy@gmail.com">
-          gadgetgalaxy@gmail.com
+           gadgetgalaxy@gmail.com
           </a>
         </p>
         <Link href="/">
-          <button type="button" width="300px" className="btn">
+          <button type="button" className="btn">
             Continue Shopping
           </button>
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Success
+export default Cancel;
